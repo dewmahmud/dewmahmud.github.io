@@ -1,0 +1,612 @@
+/* ==========================================
+   1. Core Styling, Variables & Reset
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #4a0e17;    /* ডার্ক বারগান্ডি ওয়াইন */
+    --secondary-color: #722f37;  /* ওয়াইন রেড */
+    --accent-color: #d4af37;     /* মেটালিক গোল্ড */
+    --text-dark: #232b2b;        /* চারকোল ব্ল্যাক টেক্সট */
+    --text-light: #626e60;       /* সফট গ্রে-গ্রিন (ক্লিন রিডিবিলিটির জন্য সামান্য ডার্ক করা) */
+    --bg-light: #fdfefe;         /* অফ-হোয়াইট ব্যাকগ্রাউন্ড */
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 85%;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+    border-top: 1px solid #f2f4f4;
+    border-bottom: 1px solid #f2f4f4;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0 auto;
+}
+
+/* ==========================================
+   2. Header & Navigation Bar
+   ========================================== */
+header {
+    background: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================
+   3. Hero Section (With Profile Image & Links)
+   ========================================== */
+.hero-section {
+    background: linear-gradient(135deg, #4a0e17 0%, #2b050a 100%);
+    color: #fff;
+    padding: 100px 0;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #f0e6e7;
+}
+
+.contact-badges {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-badges span {
+    font-size: 0.95rem;
+    color: #e5d0d2;
+}
+
+.contact-badges i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* Social Links in Hero */
+.linkedin-link, .scholar-link {
+    color: #e5d0d2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.linkedin-link:hover, .scholar-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Call to Action Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    margin-right: 15px;
+    border: 1px solid var(--accent-color);
+}
+
+.primary-btn:hover {
+    background: #bd9a2b;
+    border-color: #bd9a2b;
+    color: var(--primary-color);
+}
+
+.secondary-btn {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+/* Profile Image Box */
+.hero-image-box {
+    flex: 0 0 320px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(212, 175, 55, 0.3); /* গোল্ডেন টিন্ট বর্ডার */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================
+   4. Research Focus & Grants
+   ========================================== */
+.interests-tags {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tag {
+    display: inline-block;
+    background: #f7ebec;
+    color: var(--primary-color);
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #ecd5d7;
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.sub-heading i {
+    color: var(--accent-color);
+}
+
+.grants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grant-card {
+    background: #fff;
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(74, 14, 23, 0.06);
+    border-radius: 0 8px 8px 0;
+}
+
+.grant-year {
+    font-size: 0.85rem;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.grant-card h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.grant-source {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ==========================================
+   5. Experience Timeline
+   ========================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    border-right: 3px solid #f0e6e7;
+}
+
+.time {
+    min-width: 180px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.institution {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* ==========================================
+   6. Research Publications & DOI Action Buttons
+   ========================================== */
+.pub-type-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid #ecd5d7;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.pub-list {
+    list-style: none;
+}
+
+.pub-list li {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-left: 3px solid #ecd5d7;
+}
+
+.pub-meta {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.authors {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.pub-actions {
+    margin-top: 12px;
+}
+
+.doi-link {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #fdf5f6;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid #f5dcde;
+    transition: all 0.3s ease;
+}
+
+.doi-link:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.doi-placeholder {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    background-color: #f5f5f5;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+/* ==========================================
+   7. Education Cards
+   ========================================== */
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.edu-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(74, 14, 23, 0.04);
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+}
+
+.edu-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.univ {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.grade {
+    color: var(--primary-color);
+}
+
+.thesis {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    background: var(--bg-light);
+    padding: 12px;
+    border-radius: 5px;
+    text-align: left;
+    border-left: 2px solid var(--accent-color);
+}
+/* ==========================================
+   7. Education Cards
+   ========================================== */
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.edu-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(74, 14, 23, 0.04);
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px); /* কার্ডের ওপর মাউস নিলে সামান্য উপরে উঠবে */
+}
+
+/* University Logo Custom Styling */
+.edu-logo-box {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px; /* লোগো ফ্রেমের উচ্চতা */
+}
+
+.edu-univ-logo {
+    max-width: 100%;
+    max-height: 65px; /* লোগো ইমেজটির ম্যাক্সিমাম সাইজ নিয়ন্ত্রণ */
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08)); /* মৃদু শ্যাডো ইফেক্ট */
+}
+
+.univ {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.grade {
+    color: var(--primary-color);
+}
+
+.thesis {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    background: var(--bg-light);
+    padding: 12px;
+    border-radius: 5px;
+    text-align: left;
+    border-left: 2px solid var(--accent-color);
+}
+/* ==========================================
+   8. Technical Skills & Languages
+   ========================================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.skills-box p {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0e6e7;
+}
+
+.ielts-box {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.score-big {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 15px 0;
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    font-size: 0.95rem;
+}
+
+.score-grid div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   9. Footer
+   ========================================== */
+footer {
+    background: #1f0407;
+    color: #d5c3c5;
+    text-align: center;
+    padding: 35px 0;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+/* ==========================================
+   10. Responsive Design Media Queries
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-links { 
+        display: none; 
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-badges {
+        justify-content: center;
+    }
+    
+    .primary-btn {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+    }
+    
+    .profile-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .edu-grid, .grid-2 { 
+        grid-template-columns: 1fr; 
+    }
+
+    .timeline-item { 
+        flex-direction: column; 
+    }
+    
+    .time { 
+        margin-bottom: 5px; 
+    }
+}
