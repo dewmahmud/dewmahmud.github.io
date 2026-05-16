@@ -204,6 +204,17 @@ header {
     transform: scale(1.03);
     border-color: var(--accent-color);
 }
+/* LinkedIn Link Styling */
+.linkedin-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.linkedin-link:hover {
+    color: var(--accent-color); /* হোভার করলে এটি আপনার থিমের কমলা রঙে রূপান্তর হবে */
+    text-decoration: underline;
+}
 
 /* ==========================================
    4. Research Focus & Grants
