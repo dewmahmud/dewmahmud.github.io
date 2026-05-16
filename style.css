@@ -1,0 +1,477 @@
+/* ==========================================
+   1. Core Styling, Variables & Reset
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #0f2b46;
+    --secondary-color: #1e5489;
+    --accent-color: #e67e22;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 85%;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0 auto;
+}
+
+/* ==========================================
+   2. Header & Navigation Bar
+   ========================================== */
+header {
+    background: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+}
+
+/* ==========================================
+   3. Hero Section (With Profile Image)
+   ========================================== */
+.hero-section {
+    background: linear-gradient(135deg, #0f2b46 0%, #1a365d 100%);
+    color: #fff;
+    padding: 100px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #93c5fd;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #e2e8f0;
+}
+
+.contact-badges {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-badges span {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.contact-badges i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* Call to Action Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--accent-color);
+    color: #fff;
+    margin-right: 15px;
+}
+
+.primary-btn:hover {
+    background: #d35400;
+}
+
+.secondary-btn {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+/* Profile Image Box */
+.hero-image-box {
+    flex: 0 0 320px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================
+   4. Research Focus & Grants
+   ========================================== */
+.interests-tags {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e1f5fe;
+    color: var(--secondary-color);
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.sub-heading i {
+    color: var(--accent-color);
+}
+
+.grants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grant-card {
+    background: #fff;
+    border-left: 4px solid var(--accent-color);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.grant-year {
+    font-size: 0.85rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.grant-card h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.grant-source {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   5. Experience Timeline
+   ========================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.time {
+    min-width: 180px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.content h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.institution {
+    color: var(--text-light);
+}
+
+/* ==========================================
+   6. Research Publications
+   ========================================== */
+.pub-type-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.pub-list {
+    list-style: none;
+}
+
+.pub-list li {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.pub-meta {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.authors {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ==========================================
+   7. Education Cards
+   ========================================== */
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.edu-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.edu-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.univ {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.grade {
+    color: var(--primary-color);
+}
+
+.thesis {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    background: var(--bg-light);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* ==========================================
+   8. Technical Skills & Languages
+   ========================================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.skills-box p {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.ielts-box {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.score-big {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 15px 0;
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   9. Footer
+   ========================================== */
+footer {
+    background: #0b1d30;
+    color: #a0aec0;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   10. Responsive Design Media Queries
+   ========================================== */
+@media (max-width: 768px) {
+    /* Navbar Mobile Reset */
+    .nav-links { 
+        display: none; 
+    }
+
+    /* Hero Section Responsive Layout */
+    .hero-container {
+        flex-direction: column-reverse; /* ইমেজের নিচে টেক্সট আসবে */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-badges {
+        justify-content: center;
+    }
+    
+    .primary-btn {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+    }
+    
+    .profile-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* General Layout Collapse */
+    .edu-grid, .grid-2 { 
+        grid-template-columns: 1fr; 
+    }
+
+    .timeline-item { 
+        flex-direction: column; 
+    }
+    
+    .time { 
+        margin-bottom: 5px; 
+    }
+}
