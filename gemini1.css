@@ -109,7 +109,8 @@ header {
    3. Hero Section (With Profile Image)
    ========================================== */
 .hero-section {
-    background: linear-gradient(135deg, #1e3d59 0%, #172a3a 100%);
+    /* background: linear-gradient(135deg, #1e3d59 0%, #172a3a 100%); */
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
     color: #fff;
     padding: 80px 0;
     border-bottom: 4px solid var(--accent-color);
