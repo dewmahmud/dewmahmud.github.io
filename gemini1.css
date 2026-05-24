@@ -111,10 +111,10 @@ header {
 .hero-section {
     /* background: linear-gradient(135deg, #1e3d59 0%, #172a3a 100%); */
     /* background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb); */
-   background: linear-gradient(90deg, hsla(212, 91%, 78%, 1) 0%, hsla(254, 100%, 45%, 1) 60%);
+    background: linear-gradient(90deg, #0968E5, #091970);
     color: #fff;
     padding: 80px 0;
-    border-bottom: 4px solid var(--accent-color);
+    border-bottom: 4px solid var(--secondary-color);
 }
 
 .hero-container {
