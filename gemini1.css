@@ -1,11 +1,11 @@
 /* ==========================================
-   1. Core Styling, Variables & Reset (Modified with Extracted Hex Colors)
+   1. Core Styling, Variables & Reset
    ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif; /* ফন্ট পরিবর্তন করে Inter করা হলো */
     scroll-behavior: smooth;
 }
 
